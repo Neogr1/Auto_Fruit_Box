@@ -5,7 +5,7 @@ https://www.gamesaien.com/game/fruit_box_a/
 위 게임을 자동화
 
 ## Execution
-- 조건: `alt+tab`을 누르면 브라우저로 이동하도록 세팅
+- 조건: `alt+tab`을 누르면 브라우저로 이동하도록 세팅. 브라우저 배율은 100%로 창을 최대화.
 - 실행: 터미널에 `python main.py` 입력하거나 비슷한 방식으로 Python 코드 실행
 
 ## How It Works?
@@ -31,7 +31,7 @@ https://www.gamesaien.com/game/fruit_box_a/
 ## Environment
 - OS: Windows 11
 - 해상도: 2560*1600
-- 배율: 125%
+- 화면배율: 125%
 - 브라우저: Microsoft Edge (130.0.2849.80)
 
 다른 환경(특히 해상도)에서 사용할 경우 (당연히) 잘 안 될 것임.
