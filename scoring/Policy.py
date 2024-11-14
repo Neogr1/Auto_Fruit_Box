@@ -1,5 +1,5 @@
 import random
-from SegmentTree2D import SegmentTree2D
+from scoring.SegmentTree2D import SegmentTree2D
 
 class _Policy:
     ROW_ITER = list(range(10))
