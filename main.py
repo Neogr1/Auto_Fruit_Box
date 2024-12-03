@@ -29,7 +29,11 @@ if __name__ == "__main__":
     print("[INFO] The numbers of each digit are:")
     print(*[sum(row.count(digit) for row in board_numbers) for digit in range(10)])
 
-    boxes = solver.pseudo_genetic_algorithm(board_numbers, Policy.GreedySelection_PositionFirst, num_epoch=10, max_depth=10, max_iter=10)
+    boxes = solver.pseudo_genetic_algorithm(
+        board_numbers,
+        Policy.GreedySelection_PositionFirst,
+        num_epoch=10, max_depth=30, max_iter=10)
+    
     print("[INFO] Selected boxes are:")
     print("   | r1 c1 r2 c2")
     for i,(r1,c1,r2,c2) in enumerate(boxes): print(f"{i:2d} | {r1:2d} {c1:2d} {r2:2d} {c2:2d}")

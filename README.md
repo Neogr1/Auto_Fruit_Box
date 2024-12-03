@@ -5,7 +5,7 @@ https://www.gamesaien.com/game/fruit_box_a/
 위 게임을 자동화
 
 ## Execution
-- 조건: `alt+tab`을 누르면 브라우저로 이동하도록 세팅. 브라우저 배율은 100%로 창을 최대화.
+- 조건: `alt+tab`을 누르면 브라우저로 이동하도록 세팅. 브라우저 배율은 100%로 창을 최대화
 - 실행: 터미널에 `python main.py` 입력하거나 비슷한 방식으로 Python 코드 실행
 
 ## How It Works
@@ -14,8 +14,8 @@ https://www.gamesaien.com/game/fruit_box_a/
     Selenium으로 하고 싶었지만, 광고도 많고 JavaScript 코드가 난독화되어 있어 제어의 어려움 있음.
 - **AWS의 Textract를 통한 OCR**
 
-    JavaScript 난독화 때문에 OCR 사용.
-    인식률을 높이기 위해 게임 영역 이미지를 필요 영역만 흑백으로 전처리한 후 OCR 진행.
+    JavaScript 난독화 때문에 OCR 사용함.
+    인식률을 높이기 위해 게임 영역 이미지를 필요 영역만 흑백으로 전처리한 후 OCR 진행함.
     PyAutoGUI의 `locateOnScreen`도 사용해봤지만 부정확함.
 
 - **무작위 탐색으로 최적 점수 찾기**
@@ -29,13 +29,13 @@ https://www.gamesaien.com/game/fruit_box_a/
     1. 사각형 영역의 합이 10인지 판단
     2. 게임 영역의 숫자를 업데이트
 
-    이 경우에 대표적으로 두 가지의 자료구조 사용 가능
+    이 경우에 두 가지의 자료구조 사용 가능함.
     | Data Structure  | Query            | Update           | Avg. Time for Query | Avg. Time for Update |
     |-----------------|------------------|------------------|---------------------|----------------------|
     | 2D Prefix Sum   | O(1)             | O(N * M)         | 1                   | 49.5                 |
     | 2D Segment Tree | O(log N * log M) | O(log N * log M) | 20                  | 20                   |
 
-    일단은 세그먼트 트리가 유리할 것이라 판단했지만 실제 테스트를 통한 정확한 비교 필요.
+    탐색 시 많은 쿼리로 인해 2D Prefix Sum이 월등하게 빠름.
     
 ## Dependencies
 - Python=3.11.5

@@ -1,12 +1,14 @@
 import random
 from scoring.SegmentTree2D import SegmentTree2D
+from scoring.PrefixSum2D import PrefixSum2D
+from abc import ABC, abstractmethod
 
-class _Policy:
+class _Policy(ABC):
     ROW_ITER = list(range(10))
     COL_ITER = list(range(17))
 
     def __init__(self, grid, boxes=[], target_sum=10):
-        self.tree = SegmentTree2D(grid)
+        self.tree = PrefixSum2D(grid)
         self.rows = len(grid)
         self.cols = len(grid[0])
         self.boxes = boxes
@@ -22,7 +24,14 @@ class _Policy:
                     self.tree.update(r, c, 0)
 
     def get_score(self):
-        return sum(sum(i==0 for i in row) for row in self.tree.to_grid())
+        return sum(sum(i==0 for i in row) for row in self.tree.get_grid())
+
+    @abstractmethod
+    def execute(self):
+        '''
+        보드에서 제거할 box의 순서를 찾는 알고리즘 구현
+        '''
+        pass
 
 class GreedySelection_PositionFirst(_Policy):
     def _greedy_select(self):

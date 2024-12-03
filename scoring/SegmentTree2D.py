@@ -64,7 +64,7 @@ class SegmentTree2D:
     def get_value(self, row, col):
         return self.tree[row + self.rows][col + self.cols]
 
-    def to_grid(self):
+    def get_grid(self):
         grid = [[0] * self.cols for _ in range(self.rows)]
         for r in range(self.rows):
             for c in range(self.cols):
