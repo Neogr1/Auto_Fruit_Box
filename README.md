@@ -4,6 +4,12 @@ https://www.gamesaien.com/game/fruit_box_a/
 
 위 게임을 자동화
 
+
+https://github.com/user-attachments/assets/77c5e231-99d7-4b82-bccf-33bfedc7b902
+
+
+
+
 ## Execution
 - 조건: `alt+tab`을 누르면 브라우저로 이동하도록 세팅. 브라우저 배율은 100%로 창을 최대화
 - 실행: 터미널에 `python main.py` 입력하거나 비슷한 방식으로 Python 코드 실행
